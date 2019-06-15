@@ -5,11 +5,8 @@ const deleteHtmlItems = items => {
     deleteHtmlItem(items[i]);
   }
 };
-const getItemGroupsByClassNames = classNames => {
-  return classNames.map(className =>
-    document.getElementsByClassName(className)
-  );
-};
+const getItemGroupsByClassNames = classNames =>
+  classNames.map(className => document.getElementsByClassName(className));
 const undesirableClassNames = [
   "metabar",
   "s-upgradeMembershipAction",
