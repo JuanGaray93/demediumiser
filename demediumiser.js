@@ -1,3 +1,4 @@
+// Console version
 const deleteHtmlItem = item => (item.style.display = "none");
 const deleteHtmlItems = items => {
   // Old-fashioned for loop to iterate over an HTMLCollection
@@ -15,3 +16,19 @@ const undesirableClassNames = [
   "js-postShareWidget"
 ];
 getItemGroupsByClassNames(undesirableClassNames).forEach(deleteHtmlItems);
+
+// Bookmarklet version
+javascript: (function() {
+  for (let x of [
+    "metabar",
+    "s-upgradeMembershipAction",
+    " u-bottom0",
+    "surface-scrollOverlay",
+    "js-postShareWidget"
+  ]) {
+    var elements = document.getElementsByClassName(x);
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.display = "none";
+    }
+  }
+})();
