@@ -1,5 +1,5 @@
 // Console version
-const deleteHtmlItem = item => (item.style.display = "none");
+const deleteHtmlItem = item => item.parentNode.removeChild(item);
 const deleteHtmlItems = items => {
   // Old-fashioned for loop to iterate over an HTMLCollection
   for (let i = 0; i < items.length; i++) {
@@ -9,11 +9,13 @@ const deleteHtmlItems = items => {
 const getItemGroupsByClassNames = classNames =>
   classNames.map(className => document.getElementsByClassName(className));
 const undesirableClassNames = [
-  "metabar",
+  "metabar" /* 
   "s-upgradeMembershipAction",
-  " u-bottom0",
+  "u-bottom0",
+  "postShowScreen",
   "surface-scrollOverlay",
-  "js-postShareWidget"
+  "js-postShareWidget",
+  "u-overflowHidden" */
 ];
 getItemGroupsByClassNames(undesirableClassNames).forEach(deleteHtmlItems);
 
@@ -22,13 +24,16 @@ javascript: (function() {
   for (let x of [
     "metabar",
     "s-upgradeMembershipAction",
-    " u-bottom0",
+    "u-bottom0",
+    "postShowScreen",
     "surface-scrollOverlay",
-    "js-postShareWidget"
+    "js-postShareWidget",
+    "u-overflowHidden"
   ]) {
     var elements = document.getElementsByClassName(x);
     for (let i = 0; i < elements.length; i++) {
-      elements[i].style.display = "none";
+      var element = elements[i];
+      element.parentNode.removeChild(element);
     }
   }
 })();
