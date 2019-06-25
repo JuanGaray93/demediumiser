@@ -20,6 +20,7 @@ getItemGroupsByClassNames(undesirableClassNames).forEach(deleteHtmlItems);
 // Bookmarklet version
 javascript: (function() {
   for (let x of [
+    "n o p q r c s t u v",
     "metabar",
     "s-upgradeMembershipAction",
     " u-bottom0",
