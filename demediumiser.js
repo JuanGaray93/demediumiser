@@ -11,9 +11,10 @@ const getItemGroupsByClassNames = classNames =>
 const undesirableClassNames = [
   "metabar",
   "s-upgradeMembershipAction",
-  " u-bottom0",
+  "u-bottom0",
   "surface-scrollOverlay",
-  "js-postShareWidget"
+  "js-postShareWidget",
+  "branch-journeys-top"
 ];
 getItemGroupsByClassNames(undesirableClassNames).forEach(deleteHtmlItems);
 
@@ -24,7 +25,8 @@ javascript: (function() {
     "s-upgradeMembershipAction",
     " u-bottom0",
     "surface-scrollOverlay",
-    "js-postShareWidget"
+    "js-postShareWidget",
+    "branch-journeys-top"
   ]) {
     var elements = document.getElementsByClassName(x);
     for (let i = 0; i < elements.length; i++) {
