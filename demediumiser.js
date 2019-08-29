@@ -9,6 +9,7 @@ const deleteHtmlItems = items => {
 const getItemGroupsByClassNames = classNames =>
   classNames.map(className => document.getElementsByClassName(className));
 const undesirableClassNames = [
+  "top-bar",
   "metabar",
   "s-upgradeMembershipAction",
   "u-bottom0",
@@ -21,6 +22,7 @@ getItemGroupsByClassNames(undesirableClassNames).forEach(deleteHtmlItems);
 // Bookmarklet version
 javascript: (function() {
   for (let x of [
+    "top-bar",
     "metabar",
     "s-upgradeMembershipAction",
     " u-bottom0",
